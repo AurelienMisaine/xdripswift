@@ -64,7 +64,7 @@ platform :ios do
     )
 
     previous_build_number = latest_testflight_build_number(
-      app_identifier: "com.#{TEAMID}.xdripswift",
+      app_identifier: "com.aurelien.xdrip4ios",
       api_key: api_key,
     )
 
@@ -81,7 +81,7 @@ platform :ios do
 
     update_code_signing_settings(
       path: "#{GITHUB_WORKSPACE}/xdrip.xcodeproj",
-      profile_name: mapping["com.#{TEAMID}.xdripswift"],
+      profile_name: mapping["com.aurelien.xdrip4ios"],
       code_sign_identity: "iPhone Distribution",
       targets: ["xdrip"]
     )
