@@ -233,6 +233,7 @@ jobs:
         shell: bash
         run: |
           while IFS= read -r gem_path; do
+          [[ -d "$gem_path" ]] || continue
             find "$gem_path" -type f -name table_printer.rb -print0 \
               | while IFS= read -r -d '' file; do
                   sed -i '' '/puts(Terminal::Table.new(params))/d' "$file"
