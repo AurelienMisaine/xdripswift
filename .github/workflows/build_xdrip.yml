@@ -219,7 +219,8 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           submodules: recursive
-          ref: ${{ env.TARGET_BRANCH }}
+          repository: paulplant/xdripswift
+          ref: develop
 
       # Patch Fastlane Match to not print tables
       - name: Patch Match Tables
