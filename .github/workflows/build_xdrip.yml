@@ -214,7 +214,7 @@ jobs:
           echo ${{ steps.sync.outputs.has_new_commits }}
           echo "NEW_COMMITS=${{ steps.sync.outputs.has_new_commits }}" >> $GITHUB_OUTPUT
 
-            - name: Checkout Repo for building
+      - name: Checkout Repo for building
         uses: actions/checkout@v5
         with:
           token: ${{ secrets.GH_PAT }}
