@@ -219,15 +219,8 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           submodules: recursive
-          repository: paulplant/xdripswift
-          ref: develop
-      - name: Remettre mon identifiant d'app
-        run: |
-          find . \( -name "Fastfile" -o -name "*.xcconfig" \) -print0 \
-            | xargs -0 sed -i '' \
-              -e 's/com\.#{TEAMID}\.xdripswift/com.aurelien.xdrip4ios/g' \
-              -e 's/com\.\$(DEVELOPMENT_TEAM)\.xdripswift/com.aurelien.xdrip4ios/g'
-          grep -rn "aurelien" fastlane/Fastfile || true
+
+  
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
